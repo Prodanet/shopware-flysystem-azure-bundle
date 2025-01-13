@@ -1,5 +1,5 @@
 {
-    "name": "torqit/shopware-flysystem-azure-bundle",
+    "name": "torq/shopware-flysystem-azure-bundle",
     "type": "bundle",
     "require": {
         "league/flysystem": "^3.9",
@@ -7,14 +7,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TorqIT\\FlysystemAzureBundle\\": "src"
-        }
-    },
-    "extra": {
-        "pimcore": {
-            "bundles": [
-                "TorqIT\\FlysystemAzureBundle\\FlysystemAzureBundle"
-            ]
+            "Torq\\ShopwareFlysystemAzureBundle\\": "src"
         }
     }
 }

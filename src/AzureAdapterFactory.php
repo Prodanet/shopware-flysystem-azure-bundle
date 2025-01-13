@@ -1,13 +1,12 @@
 <?php
 
-namespace TorqIT\FlysystemAzureBundle;
+namespace Torq\ShopwareFlysystemAzureBundle;
 
-use App\SeekableAzureBlobStorageAdapter;
 use League\Flysystem\AdapterInterface;
 use MicrosoftAzure\Storage\Blob\BlobRestProxy;
 use Shopware\Core\Framework\Adapter\Filesystem\Adapter\AdapterFactoryInterface;
 
-class AzureFlysystemAdapterFactory implements AdapterFactoryInterface
+class AzureAdapterFactory implements AdapterFactoryInterface
 {
     public function getType(): string
     {

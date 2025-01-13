@@ -1,6 +1,6 @@
 <?php
 
-namespace TorqIT\FlysystemAzureBundle\DependencyInjection;
+namespace Torq\ShopwareFlysystemAzureBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;

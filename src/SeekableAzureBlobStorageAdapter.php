@@ -1,6 +1,6 @@
 <?php
 
-namespace TorqIT\FlysystemAzureBundle;
+namespace Torq\ShopwareFlysystemAzureBundle;
 
 use League\Flysystem\AzureBlobStorage\AzureBlobStorageAdapter;
 use MicrosoftAzure\Storage\Blob\BlobRestProxy;
