@@ -3,7 +3,7 @@
 namespace Prodanet\ShopwareFlysystemAzureBundle;
 
 use AzureOss\Storage\Blob\BlobServiceClient;
-use League\Flysystem\AzureBlobStorage\AzureBlobStorageAdapter;
+use AzureOss\Storage\BlobFlysystem\AzureBlobStorageAdapter;
 
 class SeekableAzureBlobStorageAdapter extends AzureBlobStorageAdapter
 {

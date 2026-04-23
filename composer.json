@@ -3,8 +3,7 @@
     "type": "bundle",
     "require": {
         "league/flysystem": "^3.9",
-        "azure-oss/storage-blob-flysystem": "^1.6",
-        "league/flysystem-azure-blob-storage": "^3.31"
+        "azure-oss/storage-blob-flysystem": "^1.6"
     },
     "autoload": {
         "psr-4": {
