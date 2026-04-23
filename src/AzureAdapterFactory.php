@@ -15,13 +15,12 @@ class AzureAdapterFactory implements AdapterFactoryInterface
 
     public function create(array $config): \League\Flysystem\FilesystemAdapter
     {
-        $storageAccountName = $config['storage_account_name'];
-        $storageAccountKey = $config['storage_account_key'];
+        $storageConnectionString = $config['storage_connection_string'];
         $storageAccountContainer = $config['storage_account_container'];
         $storagePreffix = $config['storage_prefix'] ?? '';
-        $connectionString = "DefaultEndpointsProtocol=https;AccountName=$storageAccountName;AccountKey=$storageAccountKey;EndpointSuffix=core.windows.net";
-        $service = BlobServiceClient::fromConnectionString($connectionString);
+        $isPublicContainer = $config['storage_public'] ?? false;
+        $service = BlobServiceClient::fromConnectionString($storageConnectionString);
         $container = $service->getContainerClient($storageAccountContainer);
-        return new AzureBlobStorageAdapter($container, $storagePreffix);
+        return new AzureBlobStorageAdapter(containerClient:$container, prefix:$storagePreffix, isPublicContainer:$isPublicContainer);
     }
 }
