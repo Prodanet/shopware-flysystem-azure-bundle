@@ -1,9 +1,8 @@
 <?php
 
-namespace Torq\ShopwareFlysystemAzureBundle;
+namespace Prodanet\ShopwareFlysystemAzureBundle;
 
-use League\Flysystem\AdapterInterface;
-use MicrosoftAzure\Storage\Blob\BlobRestProxy;
+use AzureOss\Storage\Blob\BlobServiceClient;
 use Shopware\Core\Framework\Adapter\Filesystem\Adapter\AdapterFactoryInterface;
 
 class AzureAdapterFactory implements AdapterFactoryInterface
@@ -19,6 +18,6 @@ class AzureAdapterFactory implements AdapterFactoryInterface
         $storageAccountKey = $config['storage_account_key'];
         $storageAccountContainer = $config['storage_account_container'];
         $connectionString = "DefaultEndpointsProtocol=https;AccountName=$storageAccountName;AccountKey=$storageAccountKey;EndpointSuffix=core.windows.net";
-        return new SeekableAzureBlobStorageAdapter(BlobRestProxy::createBlobService($connectionString), $storageAccountContainer);
+        return new SeekableAzureBlobStorageAdapter(BlobServiceClient::fromConnectionString($connectionString), $storageAccountContainer);
     }
 }

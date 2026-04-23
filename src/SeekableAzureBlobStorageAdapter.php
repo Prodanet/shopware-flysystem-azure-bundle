@@ -1,14 +1,14 @@
 <?php
 
-namespace Torq\ShopwareFlysystemAzureBundle;
+namespace Prodanet\ShopwareFlysystemAzureBundle;
 
+use AzureOss\Storage\Blob\BlobServiceClient;
 use League\Flysystem\AzureBlobStorage\AzureBlobStorageAdapter;
-use MicrosoftAzure\Storage\Blob\BlobRestProxy;
 
 class SeekableAzureBlobStorageAdapter extends AzureBlobStorageAdapter
 {
     public function __construct(
-        private BlobRestProxy $client,
+        private BlobServiceClient $client,
         private string $container,
     ) {
         parent::__construct($client, $container);
