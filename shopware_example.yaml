@@ -4,16 +4,15 @@ shopware:
       type: "azure"
       visibility: "private"
       config:
-        storage_account_name: "%env(AZURE_STORAGE_ACCOUNT_NAME)%"
-        storage_account_key: "%env(AZURE_STORAGE_ACCOUNT_KEY)%"
-        storage_account_container: "%env(AZURE_STORAGE_ACCOUNT_PRIVATE_CONTAINER)%"
+        storage_connection_string: "%env(string:AZURE_CONNECTIONSTRING)%"
+        storage_account_container: "%env(AZURE_PRIVATE_CONTAINER)%"
     public: &public_azure
       url: "%env(AZURE_CDN_URL)%"
       type: "azure"
       config:
-        storage_account_name: "%env(AZURE_STORAGE_ACCOUNT_NAME)%"
-        storage_account_key: "%env(AZURE_STORAGE_ACCOUNT_KEY)%"
-        storage_account_container: "%env(AZURE_STORAGE_ACCOUNT_PUBLIC_CONTAINER)%"
+        storage_connection_string: "%env(string:AZURE_CONNECTIONSTRING)%"
+        storage_account_container: "%env(AZURE_PUBLIC_CONTAINER)%"
+        storage_public: true
     asset: *public_azure
     theme: *public_azure
     temp:
